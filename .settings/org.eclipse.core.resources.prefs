@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//conf/default.py=utf-8
+encoding//conf/settings_development.py=utf-8
+encoding//conf/settings_production.py=utf-8
+encoding//conf/settings_testing.py=utf-8
