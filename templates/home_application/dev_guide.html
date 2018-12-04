@@ -1,0 +1,79 @@
+<%inherit file="/base.html"/>
+
+<%block name="content">
+<div class="page_index">
+	<!-- banner start -->
+	<div class="getheadimg-box">
+		<p class="guide-banner-title">开发指引</p>
+		<p class="guide-banner-word">了解蓝鲸开发框架，从这里开始</p>
+
+	</div>
+	<!-- banner end -->
+	<div class="container">
+	<ul class="king-step3 king-step-primary">
+	    <li class="process-doing mt50 clearfix">
+	    	<span class="outer-circle"></span>
+	        <div class="step-num step-num-top-line">1</div>
+	        <div class="step-text step-text-top">
+	            <h4>本地开发环境安装</h4>
+		        <div class="mt10 mb20 wm lh2">
+					1.本地环境搭建镜像
+					<a href="http://bkopen-10032816.file.myqcloud.com/paas/bk-django1.8-u2.box" target="_blank">点击下载</a>
+					<br>
+					2.使用文档
+					<a href="http://bkopen-10032816.file.myqcloud.com/paas/蓝鲸智云统一开发环境搭建指南.docx" target="_blank">点击下载</a>
+					<br>
+					<p class="text-notice">注意：应用测试、正式部署时会自动安装运行环境，并部署应用
+					</p>
+				</div>
+	        </div>
+	    </li>
+	    <li class="process-doing clearfix">
+	    	<span class="outer-circle"></span>
+	        <div class="step-num">2</div>
+	        <div class="step-text">
+	            <h4>开发项目</h4>
+	            <div class="mt10 mb20 wm lh2">
+					<strong>1.配置修改</strong><br>
+					（1）conf/default.py 文件：APP_ID \ APP_TOKEN （蓝鲸智云开发者中心 -&gt; 点击应用ID -&gt; 基本信息 中可以查看到这两个值的信息）<br>
+					（2）conf/default.py 文件：BK_PAAS_HOST（蓝鲸智云开发者中心的域名，形如：http://paas.bking.com）<br>
+					（3）conf/settings_development.py 文件：DATABASES（请创建本地开发数据库，并修改配置信息）<br>
+					（4）conf/settings_testing.py 文件：DATABASES（请创建测试数据库，并修改配置信息）<br>
+					（5）conf/settings_production.py 文件：DATABASES（请创建正式数据库，并修改配置信息）<br>
+					<p class="text-notice">注意：测试环境 和 正式环境 的数据库需要对 AppServer 授权</p>
+					<br>
+					<strong>2.celery 配置</strong><br>
+					若需要使用 celery，请修改以下配置：（<a href="http://bkopen-10032816.file.myqcloud.com/paas/celery_packages.zip">点击下载 celery 开发指引</a>）<br>
+					（1）conf/default.py 文件：IS_USE_CELERY 的值设置为: <span class="text-notice">True</span><br>
+					（2）conf/default.py 文件：BROKER_URL_DEV（请创建本地开发的 celery消息队列，并修改配置信息，推荐使用 RabbitMQ）<br>
+					（3）conf/default.py 文件：CELERY_IMPORTS（添加celery任务模块）<br>
+					<strong>3.数据库操作</strong><br>
+					Django1.8 Migration的使用方法如下:<br>
+					（1）执行 manage.py migrate（Django默认表创建）。<br>
+					（2）执行 manage.py startapp yourappname、添加yourappname到conf/default.py文件的"INSTALLED_APPS_CUSTOM"变量中。<br>
+					（3）在Application的models.py中建立数据库模型，执行manage.py makemigrations yourappname。<br>
+					（4）执行manage.py migrate yourappname。<br>
+				</div>
+	        </div>
+	    </li>
+	    <li class="process-doing clearfix">
+	    <span class="outer-circle"></span>
+	        <div class="step-num">3</div>
+	        <div class="step-text-button-line">
+	            <h4>部署项目</h4>
+	            <div class="mt10 mb20 wm lh2">
+					<strong>通过蓝鲸智云开发者中心提供的“测试部署”、“正式部署”服务将应用部署到测试\正式环境中。</strong><br>
+					操作入口：蓝鲸智云开发者中心 -&gt; 点击应用名称 -&gt; 应用部署。 <br>
+					（1）测试部署：将应用代码在测试环境上进行部署，部署成功后就可以在测试环境中使用您的应用。<br>
+					（2）正式部署：将应用代码在正式环境上进行部署，部署成功后就可以在正式环境中使用您的应用。<br>
+					（3）下架操作：系统将应用代码从您选择的环境上撤销部署，届时用户将无法访问该应用，但是该应用的数据库依然保留。<br>
+				</div>
+	        </div>
+	    </li>
+	</ul>
+	</div>
+</div>
+</%block>
+<%block name='footerline'>
+    <hr class="guide-cutting-line">
+</%block>
