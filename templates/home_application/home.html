@@ -1,25 +1,200 @@
-<%inherit file="/base.html"/>
+<!DOCTYPE html>
+<html>
 
-<%block name="content">
-    <div class="home-page">
-    	<div class="page-arrow">
-			<div class="container">
-				<!-- 蓝鲸智云开发框架说明  Start -->
-				<div class="tc title-word">
-					<p>欢迎使用蓝鲸智云集成平台</p>
-				</div>
-				<div class="tc title-word-second">
-					<p>蓝鲸智云开发框架<small class="pl10">助力你的自动化</small></p>
-				</div>
-				<hr class="cutting-line">
-				<div class="tc frame-explain-text">
-					<p>您现在打开的应用是由蓝鲸智云示例代码生成的，该示例代码称为“APP开发框架”。</p>
-					<p>蓝鲸智云集成平台（PaaS）提供了完善的前后台开发框架、调度引擎、公共组件等模块，帮助业务的产品和技术人员快速构建低成本、免运维的支撑工具和运营系统。</p>
-					<p>若想体验快速开发应用的功能，请前往<a class="developer-center" href="${BK_PAAS_HOST}" target="_blank">“开发者中心”</a>。</p>
-				</div>
-				<!-- 蓝鲸智云开发框架说明  End -->
-			</div>
-		</div>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- 若您需要使用Kendo UI Professional，请联系版权人获得合法的授权或许可。 -->
+    <!-- Bootstrap css -->
+    <link href="https://magicbox.bk.tencent.com/static_api/v3/assets/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <!-- kendo ui css -->
+    <link href="https://magicbox.bk.tencent.com/static_api/v3/assets/kendoui-2015.2.624/styles/kendo.common.min.css" rel="stylesheet">
+    <link href="https://magicbox.bk.tencent.com/static_api/v3/assets/kendoui-2015.2.624/styles/kendo.default.min.css" rel="stylesheet">
+    <!-- font-awesome -->
+    <link href="https://magicbox.bk.tencent.com/static_api/v3/assets/fontawesome/css/font-awesome.css" rel="stylesheet">
+    <!--蓝鲸提供的公用样式库 -->
+    <link href="https://magicbox.bk.tencent.com/static_api/v3/bk/css/bk.css" rel="stylesheet">
+    <link href="https://magicbox.bk.tencent.com/static_api/v3/bk/css/bk_pack.css" rel="stylesheet">
+    <!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/js/jquery-1.10.2.min.js"></script>
+    <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/echarts-2.0/echarts-all.js"></script>
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <!-- 包括所有kendoui的js插件或者可以根据需要使用的js插件调用　-->
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/kendoui-2015.2.624/js/kendo.all.min.js"></script>
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/echarts-2.0/echarts-all.js"></script>
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/bk/js/bk.js"></script>
+    <!-- 数据埋点统计 -->
+    <script src="http://magicbox.bk.tencent.com/static_api/analysis.js"></script>
+    <!-- 以下两个插件用于在IE8以及以下版本浏览器支持HTML5元素和媒体查询，如果不需要用可以移除 -->
+    <!--[if lt IE 9]><script src="https://magicbox.bk.tencent.com/static_api/v3/assets/js/html5shiv.min.js"></script><script src="https://magicbox.bk.tencent.com/static_api/v3/assets/js/respond.min.js"></script><![endif]-->
+</head>
+
+<body class="bg-white" data-bg-color="bg-white">
+    <div class="king-page-box">
+        <div class="king-layout1-header">
+            <nav>
+                <div class="king-header2 navbar navbar-blue king-horizontal-info f14">
+                    <div class="nav-container">
+                        <div class="navbar-header">
+                            <button class="pull-right visible-xs navbar-toggle collapsed navbar-toggle-sm" type="button" data-toggle="collapse" data-target="#king-header2-navbar-collapse"> <i class="fa fa-fw fa-ellipsis-v">                    </i> </button>
+                            <a class="navbar-brand" href="javascript:;" title="故障预警系统">
+                                <img src="https://www.tyun.cn/static/images/logo.png" alt="" class="logo" style="margin-top:-10px;"> </a>
+                        </div>
+                        <div class="navbar-collapse collapse" id="king-header2-navbar-collapse">
+                            <ul class="nav navbar-nav navbar-left hidden-sm">
+                                <li class="open">
+                                    <a href="/">
+                                        <span>首页</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/account">
+                                        <span>云账号</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/instance">
+                                        <span>云主机</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-cog">                            </i>
+                                        <span class="ml10"> 管理配置 </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span> admin </span>
+                                        <span class="avatar">
+                                            <img src="https://magicbox.bk.tencent.com/static_api/v3/components/horizontal_nav9/images/avatar.jpg"> </span>
+                                    </a>
+                                </li>
+                                <li> <a href="javascript:void(0)">                            退出                        </a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+   <!--
+如果没有引用以下文件，请去掉此注释
+<script src="https://magicbox.bk.tencent.com/static_api/v3/assets/js/jquery-1.10.2.min.js"></script>
+<script src="https://magicbox.bk.tencent.com/static_api/v3/assets/echarts-2.0/echarts-all.js"></script>
+-->
+<div id="chart4_demo1" style="height: 500px; padding: 10px; -webkit-tap-highlight-color: transparent; user-select: none; background-color: rgba(0, 0, 0, 0);" _echarts_instance_="1544076120369">
+    <div style="position: relative; overflow: hidden; width: 1268px; height: 500px;">
+        <div data-zr-dom-id="bg" class="zr-element" style="position: absolute; left: 0px; top: 0px; width: 1268px; height: 500px; user-select: none;"></div>
+        <canvas width="1268" height="500" data-zr-dom-id="0" class="zr-element" style="position: absolute; left: 0px; top: 0px; width: 1268px; height: 500px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas>
+        <canvas width="1268" height="500" data-zr-dom-id="1" class="zr-element" style="position: absolute; left: 0px; top: 0px; width: 1268px; height: 500px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas>
+        <canvas width="1268" height="500" data-zr-dom-id="_zrender_hover_" class="zr-element" style="position: absolute; left: 0px; top: 0px; width: 1268px; height: 500px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas>
+        <div class="echarts-dataview" style="position: absolute; display: block; overflow: hidden; transition: height 0.8s ease 0s, background-color 1s ease 0s; z-index: 1; left: 0px; top: 0px; width: 1268px; height: 0px; background-color: rgb(240, 255, 255);"></div>
     </div>
-</%block>
+</div>
+ </div> 
+<script type="text/javascript">
+    function createEPieChart(conf){
+        var myChart = echarts.init(document.getElementById(conf.selector));
+        var aLegend = [];
+        var series = conf.data.series;
+        for (var i = 0; i < series.length; i++) {
+             aLegend[i] = series[i].name;
+        };  
+        // 填入数据
+        myChart.setOption({
+            title : {
+                text: conf.data.title,
+                subtext: '',
+                x:'center'
+            },
+            legend: {
+                // x : 'left',
+                y: 'bottom',
+                data: aLegend
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    mark : {show: true},
+                    dataView : {show: true, readOnly: false},
+                    magicType : {
+                        show: true, 
+                        type: ['pie', 'funnel'],
+                        option: {
+                            funnel: {
+                                x: '25%',
+                                width: '50%',
+                                funnelAlign: 'left',
+                                max: 1548
+                            }
+                        }
+                    },
+                    restore : {show: true},
+                    saveAsImage : {show: true}
+                }
+            },
+            calculable : true,
+            series: [{
+                // 根据名字对应到相应的系列
+                name:'云主机数量',
+                type:'pie',
+                data: series
+            }]
+        });
+    }
+    
+    function initEPieChart(conf){
+    	var json_list = {
+    		    "code":0,
+    		    "result": true,
+    		    "messge":"success",
+    		    "data": {
+    		        "title": "",
+    		        "series": [{
+    		            "value":1, 
+    		            "name":"AWS"
+    		        }, {
+    		            "value":4, 
+    		            "name":"腾讯云"
+    		        }] 
+    		    }   
+    		};
+    	
+        $.ajax({
+            url: conf.url,
+            type: 'GET',
+            dataType: conf.dataType,
+            success: function(res){
+                //获取数据成功
+                if (res.result){
+                    //var data = res.data;
+                    var data = json_list.data;
+                    createEPieChart({
+                        selector: conf.containerId, // 图表容器
+                        data: data, // 图表数据
+                    });
+                } 
+            }
+        });  
+    }
+    
+    $(function(){
+        initEPieChart({
+            url: 'https://magicbox.bk.tencent.com/static_api/v3/components/chart4/demo.json',
+            dataType: 'json',
+            containerId: 'chart4_demo1'
+        });   
+    });
+</script>   
+   
+</body>
 
+</html>

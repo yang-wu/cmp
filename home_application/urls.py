@@ -14,6 +14,10 @@ from django.conf.urls import patterns
 urlpatterns = patterns(
     'home_application.views',
     (r'^$', 'home'),
-    (r'^dev-guide/$', 'dev_guide'),
-    (r'^contactus/$', 'contactus'),
+    (r'^account/$', 'account'),
+    (r'^instance/$', 'instance'),
+    (r'^access-keys/addAccount$', 'addAccount'),
+    (r'^access-keys/getAccount$', 'getAccount'),
+    (r'^instances/get$', 'get_instances'),
+    (r'^instances/getSyncInstances$', 'getSyncInstances'),
 )

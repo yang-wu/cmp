@@ -96,14 +96,14 @@ ALLOWED_HOSTS = ['*']
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'account.middlewares.LoginMiddleware',   # 登录鉴权中间件
+    #'account.middlewares.LoginMiddleware',   # 登录鉴权中间件
     'common.middlewares.CheckXssMiddleware',  # Xss攻击处理中间件
 )
 
@@ -231,7 +231,7 @@ BK_LOG_DIR = os.environ.get('BK_LOG_DIR', '/data/paas/apps/logs/')
 LOGGING_DIR = os.path.join(BASE_DIR, 'logs', APP_ID)
 LOG_CLASS = 'logging.handlers.RotatingFileHandler'
 if RUN_MODE == 'DEVELOP':
-    LOG_LEVEL = 'DEBUG'
+    LOG_LEVEL = 'INFO'
 elif RUN_MODE == 'TEST':
     LOGGING_DIR = os.path.join(BK_LOG_DIR, APP_ID)
     LOG_LEVEL = 'INFO'

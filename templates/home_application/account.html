@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- 若您需要使用Kendo UI Professional，请联系版权人获得合法的授权或许可。 -->
+    <!-- Bootstrap css -->
+    <link href="https://magicbox.bk.tencent.com/static_api/v3/assets/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <!-- kendo ui css -->
+    <link href="https://magicbox.bk.tencent.com/static_api/v3/assets/kendoui-2015.2.624/styles/kendo.common.min.css" rel="stylesheet">
+    <link href="https://magicbox.bk.tencent.com/static_api/v3/assets/kendoui-2015.2.624/styles/kendo.default.min.css" rel="stylesheet">
+    <!-- font-awesome -->
+    <link href="https://magicbox.bk.tencent.com/static_api/v3/assets/fontawesome/css/font-awesome.css" rel="stylesheet">
+    <!--蓝鲸提供的公用样式库 -->
+    <link href="https://magicbox.bk.tencent.com/static_api/v3/bk/css/bk.css" rel="stylesheet">
+    <link href="https://magicbox.bk.tencent.com/static_api/v3/bk/css/bk_pack.css" rel="stylesheet">
+    <!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/js/jquery-1.10.2.min.js"></script>
+    <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/echarts-2.0/echarts-all.js"></script>
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <!-- 包括所有kendoui的js插件或者可以根据需要使用的js插件调用　-->
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/kendoui-2015.2.624/js/kendo.all.min.js"></script>
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/echarts-2.0/echarts-all.js"></script>
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/bk/js/bk.js"></script>
+    <!-- 数据埋点统计 -->
+    <script src="http://magicbox.bk.tencent.com/static_api/analysis.js"></script>
+    <script src="static/js/jquery.json-2.3.min.js"></script>
+    <!-- 以下两个插件用于在IE8以及以下版本浏览器支持HTML5元素和媒体查询，如果不需要用可以移除 -->
+    <!--[if lt IE 9]><script src="https://magicbox.bk.tencent.com/static_api/v3/assets/js/html5shiv.min.js"></script><script src="https://magicbox.bk.tencent.com/static_api/v3/assets/js/respond.min.js"></script><![endif]-->
+</head>
+
+<body class="bg-white" data-bg-color="bg-white">
+    <div class="king-page-box">
+        <div class="king-layout1-header">
+            <nav>
+                <div class="king-header2 navbar navbar-blue king-horizontal-info f14">
+                    <div class="nav-container">
+                        <div class="navbar-header">
+                            <button class="pull-right visible-xs navbar-toggle collapsed navbar-toggle-sm" type="button" data-toggle="collapse" data-target="#king-header2-navbar-collapse"> <i class="fa fa-fw fa-ellipsis-v">                    </i> </button>
+                            <a class="navbar-brand" href="javascript:;" title="故障预警系统">
+                                <img src="https://www.tyun.cn/static/images/logo.png" alt="" class="logo" style="margin-top:-10px;"> </a>
+                        </div>
+                        <div class="navbar-collapse collapse" id="king-header2-navbar-collapse">
+                            <ul class="nav navbar-nav navbar-left hidden-sm">
+                                <li>
+                                    <a href="/">
+                                        <span>首页</span>
+                                    </a>
+                                </li>
+                                <li class="open">
+                                    <a href="/account">
+                                        <span>云账号</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/instance">
+                                        <span>云主机</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-cog">                            </i>
+                                        <span class="ml10"> 管理配置 </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span> admin </span>
+                                        <span class="avatar">
+                                            <img src="https://magicbox.bk.tencent.com/static_api/v3/components/horizontal_nav9/images/avatar.jpg"> </span>
+                                    </a>
+                                </li>
+                                <li> <a href="javascript:void(0)">                            退出                        </a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div>
+            <a href="javascript:void(0);" onclick="import_key()" class="king-btn-demo king-btn king-default"  style="margin-top:30px;margin-left:160px" title="导入公有云">导入公有云</a>
+        </div>
+        <div class="king-layout2-main mt15" style="width:960px;">
+            <table class="table mb0 pr15 ranger-box2  ">
+                <thead>
+                    <tr>
+                        <th style="width: 70px;">#</th>
+                        <th style="width: 15%;">云账号名称</th>
+                        <th style="width: 15%;">accessKeyId</th>
+                        <th style="width: 15%;">云商</th>
+                        <th style="width: 15%;">描述</th>
+                        <th style="width: 15%;">最近同步时间</th>
+                        <th style="width: 15%;">同步状态</th>
+                        <th style="width: 15%;">创建时间</th>
+                        <th style="width: 15%;">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="width: 70px;">1</td>
+                        <td style="width: 15%;">腾讯云-1</td>
+                        <td style="width: 15%;">AKIDpTue9TrVAakfKpq32ylJBpEONEsHnUNE</td>
+                        <td style="width: 15%;">腾讯云</td>
+                        <td style="width: 15%;">正式环境</td>
+                        <td style="width: 15%;">2018-12-06 11:25:38</td>
+                        <td style="width: 15%;">同步成功</td>
+                        <td style="width: 15%;">2018-10-12 09:37:13</td>
+                        <td>
+                            <button class="btn btn-xs btn-success"> <i class="glyphicon glyphicon-ok"></i> 同步</button>
+                            <button class="btn btn-xs btn-warning"> <i class="glyphicon glyphicon-edit"></i> 编辑</button>
+                            <button class="btn btn-xs btn-danger"> <i class="glyphicon glyphicon-remove"></i> 删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 70px;">2</td>
+                        <td style="width: 15%;">AWS-1</td>
+                        <td style="width: 15%;">AKIAID5IJRM2SE6HGWVQ</td>
+                        <td style="width: 15%;">AWS</td>
+                        <td style="width: 15%;">海外节点</td>
+                        <td style="width: 15%;">2018-12-06 10:27:16</td>
+                        <td style="width: 15%;">同步成功</td>
+                        <td style="width: 15%;">2018-09-03 13:17:32</td>
+                        <td>
+                            <button class="btn btn-xs btn-success"> <i class="glyphicon glyphicon-ok"></i> 同步</button>
+                            <button class="btn btn-xs btn-warning"> <i class="glyphicon glyphicon-edit"></i> 编辑</button>
+                            <button class="btn btn-xs btn-danger"> <i class="glyphicon glyphicon-remove"></i> 删除</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <template id="header_tpl_15438358746932">
+                <tr>
+                    <th style="width: 70px;">#index#</th>
+                    <th style="width: 15%;">#name#</th>
+                    <th style="width: 15%;">#position#</th>
+                    <th style="width: 15%;">#date#</th>
+                    <th style="width: 15%;">#type#</th>
+                    <th>操作</th>
+                </tr>
+            </template>
+            <template id="tpl_15438358746932">
+                <tr>
+                    <td style="width: 70px;">#index#</td>
+                    <td style="width: 15%;">#name#</td>
+                    <td style="width: 15%;">#position#</td>
+                    <td style="width: 15%;">#date#</td>
+                    <td style="width: 15%;">#type#</td>
+                    <td>
+                        <button class="btn btn-xs btn-success"> <i class="glyphicon glyphicon-ok"></i> </button>
+                        <button class="btn btn-xs btn-warning"> <i class="glyphicon glyphicon-edit"></i> </button>
+                        <button class="btn btn-xs btn-danger"> <i class="glyphicon glyphicon-remove"></i> </button>
+                    </td>
+                </tr>
+            </template>
+            <!-- 设置面板End -->
+        </div>
+        
+        
+<div id="import_key" class="king-block king-block-bordered" style="position: absolute;top:180px;left: 280px;display:none;width:650px;height:400px;margin:0 auto">
+    <div class="king-block-header king-gray-light">
+        <ul class="king-block-options">
+            <li>
+                <button type="button"><i class="fa fa-cog"></i></button>
+            </li>
+        </ul>
+        <h3 class="king-block-title">导入公有云</h3>
+    </div>
+    <div class="king-block-content">
+        <form id="import_key_form" class="form-horizontal" method="POST">
+           <div class="form-group">
+              <label class="control-label col-sm-3">云商：</label>
+                <div class="col-sm-7">
+                    <div class="radio">
+                        <label class="mr10">
+                            <input type="radio" name="cloudProvider" id="optionsRadios1" value="aws" checked="">AWS
+                        </label>
+                        <label>
+                            <input type="radio" name="cloudProvider" id="optionsRadios2" value="tx" >腾讯云
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputCount3" class="col-sm-3 control-label">云账号名称：</label>
+                <div class="col-sm-7">
+                    <input type="text" name="name" class="form-control" id="inputCount3" placeholder="云账号名称">
+                </div>
+                <span class="text-danger mt5 fl">*</span>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-3 control-label">描述：</label>
+                <div class="col-sm-7">
+                    <input type="text" name="describe" class="form-control" id="inputEmail3" placeholder="云账号描述信息">
+
+                </div>
+                <span class="text-danger mt5 fl">*</span>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword3" class="col-sm-3 control-label">Access Key ID：</label>
+                <div class="col-sm-7">
+                    <input type="text" name="accessKeyId" class="form-control" id="inputPassword3" placeholder="云账号AccessKeyID">
+    
+                </div>
+                <span class="text-danger mt5 fl">*</span>
+            </div>
+           <div class="form-group">
+                <label for="inputPassword3" class="col-sm-3 control-label">Access Key Secret：</label>
+                <div class="col-sm-7">
+                    <input type="text" name="accessKeySecret" class="form-control" id="inputPassword3" placeholder="云账号AccessKeySecret">
+    
+                </div>
+                <span class="text-danger mt5 fl">*</span>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-7 col-sm-offset-3">
+                    <input type="button" class="king-btn king-success mr10" value="确认" onclick="confirm_import_key()">
+                    <input type="reset" class="king-btn king-default" value="取消" onclick="cancle_import_key()">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+    </div>    
+    <script>
+        function import_key() {
+            var div = document.getElementById("import_key");
+            var style = window.getComputedStyle(div);
+            div.style.display = style.display=="none"?"block":"none";
+           }
+        
+        function cancle_import_key() {
+            var div = document.getElementById("import_key");
+            div.style.display = "none";
+           }
+        
+        function confirm_import_key() {
+        	var formData = JSON.stringify($('#import_key_form').serialize());
+        	//alert(formData);
+            $.ajax({
+                type: "POST",//方法类型
+                url: "http://dev.paasce-poc.o.qcloud.com:8000/access-keys/addAccount",
+                data: formData,
+                dataType: "json",//预期服务器返回的数据类型               
+                success: function (result) {
+                	//alert('222');
+                    console.log(result);//打印服务端返回的数据(调试用)
+                    if (result.resultCode == 200) {
+                        alert("SUCCESS");
+                    }
+                    ;
+                },
+                error : function() {
+                    //alert("异常！");
+                }
+            });
+        }
+
+        $(function(){
+                function renderTpl(str, cfg) {
+                    var re = /(#(.+?)#)/g;
+
+                    return str.replace(re, function() {
+                        var val = cfg[arguments[2]]+'';
+                        if(typeof val == 'undefined') {
+                            val = '';
+                        }
+                        return val;
+                    });
+                }
+
+                // 异步请求后台数据
+                $.ajax({
+                    //url: 'https://magicbox.bk.tencent.com/static_api/v3/components/table7/data.json',
+                    url: 'http://dev.paasce-poc.o.qcloud.com:8000/access-keys/getAccount',
+                    type: 'GET',
+                    success: function(res){
+                    	alert("0000");
+                        var _html = ' ';
+                        var list = res.items;
+                        //var tpl = $('#tpl_15438358746932').html();
+                        var headerTpl =  $('#header_tpl_15438358746932').html();
+                        for (var i=0,len=list.length; i < len; i++){
+                            var item = list[i];
+                            _html += renderTpl(tpl, item)
+                        }
+                        $('.ranger-box2 tbody').html(_html);
+                        $('.ranger-box2 thead').html(renderTpl(headerTpl,res.catalogues));
+                    }
+                });
+            });
+    </script>
+
+</body>
+
+</html>
