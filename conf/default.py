@@ -33,8 +33,7 @@ from django.conf.global_settings import *  # noqa
 APP_ID = 'cmp'
 APP_TOKEN = 'b4d77565-b105-4da5-849a-f98a8ce405f2'
 # 蓝鲸智云开发者中心的域名，形如：http://paas.bking.com
-#BK_PAAS_HOST = 'http://paasce-poc.o.qcloud.com:80'
-BK_PAAS_HOST = ''
+BK_PAAS_HOST = 'http://paasce-poc.o.qcloud.com:80'
 # 请求官方 API 默认版本号，可选值为："v2" 或 ""；其中，"v2"表示规范化API，""表示未规范化API
 DEFAULT_BK_API_VER = 'v2'
 
@@ -73,7 +72,6 @@ elif ENVIRONMENT.endswith('testing'):
 else:
     RUN_MODE = 'DEVELOP'
     DEBUG = True
-
 
 try:
     import pymysql
@@ -137,6 +135,7 @@ PROJECT_ROOT, PROJECT_MODULE_NAME = os.path.split(PROJECT_PATH)
 BASE_DIR = os.path.dirname(os.path.dirname(PROJECT_PATH))
 PYTHON_BIN = os.path.dirname(sys.executable)
 
+
 # ===============================================================================
 # 静态资源设置
 # ===============================================================================
@@ -157,6 +156,7 @@ ROOT_URLCONF = 'urls'
 # mako template dir
 MAKO_TEMPLATE_DIR = os.path.join(PROJECT_ROOT, 'templates')
 MAKO_TEMPLATE_MODULE_DIR = os.path.join(BASE_DIR, 'templates_module', APP_ID)
+
 if RUN_MODE not in ['DEVELOP']:
     MAKO_TEMPLATE_MODULE_DIR = os.path.join(PROJECT_ROOT, 'templates_module', APP_ID)
 # Django TEMPLATES配置
