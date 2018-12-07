@@ -7,7 +7,7 @@ import datetime
 import sys
 import boto3
 from .models import Instance, Tcmpaccount
-from common.django_util import random_id
+from common.utils import random_id
 
 
 reload(sys)
