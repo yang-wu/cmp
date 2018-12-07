@@ -18,10 +18,10 @@ url_content = url_escape(input_content)
 4. 转义富文本内容
 texteditor_content = texteditor_escape(input_content)
 """
+from __future__ import unicode_literals
 from common.pxfilter import XssHtml
 from common.log import logger
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
 from django.conf import settings
 from django.http import HttpResponse
 from itertools import chain
