@@ -8,7 +8,7 @@ Unless required by applicable law or agreed to in writing, software distributed 
 an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and limitations under the License.
 """
-from common.django_util import render_json
+#from common.django_util import render_json
 from common.mymako import render_mako_context
 from common.log import logger
 import json
@@ -66,8 +66,8 @@ def addAccount(request):
         data = CloudManager(request).addAccount(values)
         print '1111111111'
         print data
-        return render_json(data)
-        #return render_mako_context(request, '/home_application/test.html')
+        #return render_json(data)
+        return render_mako_context(request, '/home_application/account.html')
     
 def getAccount(request):
     try:
