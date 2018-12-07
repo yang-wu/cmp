@@ -56,17 +56,18 @@ def addAccount(request):
       
     if request.method == "POST":
         try:
-            print request.body
             data = json.loads(request.body)
-            print data
         except Exception:
             return render_json(code=400, mes='错误的json')
 
         values = dict([(k, v) for k, v in data.iteritems() \
                        if not k.startswith('_') and v])
 
-        datas = CloudManager(request).addAccount(values)
-        return render_mako_context(request, '/home_application/test.html')
+        data = CloudManager(request).addAccount(values)
+        print '1111111111'
+        print data
+        return render_json(data)
+        #return render_mako_context(request, '/home_application/test.html')
     
 def getAccount(request):
     try:

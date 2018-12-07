@@ -159,9 +159,10 @@
             </template>
             <!-- 设置面板End -->
         </div>
-        
-        
-<div id="import_key" class="king-block king-block-bordered" style="position: absolute;top:180px;left: 280px;display:none;width:650px;height:400px;margin:0 auto">
+
+    </div>    
+            
+<div id="import_key" class="king-block king-block-bordered" style="position: absolute;top:180px;left: 30%;display:none;width:650px;height:400px;margin:0 auto">
     <div class="king-block-header king-gray-light">
         <ul class="king-block-options">
             <li>
@@ -175,7 +176,7 @@
            <div class="form-group">
               <label class="control-label col-sm-3">云商：</label>
                 <div class="col-sm-7">
-                    <div class="radio">
+                    <div class="radio" id="cloudProvider">
                         <label class="mr10">
                             <input type="radio" name="cloudProvider" id="optionsRadios1" value="aws" checked="">AWS
                         </label>
@@ -187,7 +188,7 @@
             </div>
             <div class="form-group">
                 <label for="inputCount3" class="col-sm-3 control-label">云账号名称：</label>
-                <div class="col-sm-7">
+                <div class="col-sm-7" id='name'>
                     <input type="text" name="name" class="form-control" id="inputCount3" placeholder="云账号名称">
                 </div>
                 <span class="text-danger mt5 fl">*</span>
@@ -225,8 +226,6 @@
         </form>
     </div>
 </div>
-
-    </div>    
     <script>
         function import_key() {
             var div = document.getElementById("import_key");
@@ -240,16 +239,20 @@
            }
         
         function confirm_import_key() {
-        	var formData = JSON.stringify($('#import_key_form').serialize());
-        	//alert(formData);
+        	var formData = $('#import_key_form').serializeArray();
+        	var data = {};
+            for (var i=0; i<formData.length; i++) {
+            	name = JSON.parse(JSON.stringify(formData[i])).name;
+            	value = JSON.parse(JSON.stringify(formData[i])).value;
+            	data[name] = value; 
+            }
+
             $.ajax({
                 type: "POST",//方法类型
                 url: "http://dev.paasce-poc.o.qcloud.com:8000/access-keys/addAccount",
-                data: formData,
+                data: JSON.stringify(data),
                 dataType: "json",//预期服务器返回的数据类型               
                 success: function (result) {
-                	//alert('222');
-                    console.log(result);//打印服务端返回的数据(调试用)
                     if (result.resultCode == 200) {
                         alert("SUCCESS");
                     }

@@ -14,4 +14,4 @@ django-celery==3.2.1
 supervisor==3.3.3
 uWSGI==2.0.13.1
 requests==2.9.1
-boto3=1.9.59
+boto3==1.9.59
