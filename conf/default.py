@@ -50,7 +50,8 @@ CELERY_IMPORTS = (
 # ==============================================================================
 # 应用运行环境配置信息
 # ==============================================================================
-ENVIRONMENT = os.environ.get('BK_ENV', 'development')
+#ENVIRONMENT = os.environ.get('BK_ENV', 'development')
+ENVIRONMENT = os.environ.get('BK_ENV', 'testing')
 
 # 应用基本信息从环境变量中获取，未设置环境变量(如：本地开发)时，则用用户在文件开头的填写的值
 APP_ID = os.environ.get('APP_ID', APP_ID)
