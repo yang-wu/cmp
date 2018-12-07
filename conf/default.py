@@ -69,8 +69,7 @@ if ENVIRONMENT.endswith('production'):
 elif ENVIRONMENT.endswith('testing'):
     RUN_MODE = 'TEST'
     DEBUG = False
-    #SITE_URL = '/t/%s/' % APP_ID
-    SITE_URL = '/'
+    SITE_URL = '/t/%s/' % APP_ID
 else:
     RUN_MODE = 'DEVELOP'
     DEBUG = True
