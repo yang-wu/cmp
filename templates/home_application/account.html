@@ -35,9 +35,9 @@
 
 <body class="bg-white" data-bg-color="bg-white">
     <div class="king-page-box">
-        <div class="king-layout1-header">
+        <div class="king-container clearfix">
             <nav>
-                <div class="king-header2 navbar navbar-blue king-horizontal-info f14">
+                <div class="king-header2 navbar navbar-blue  f14">
                     <div class="nav-container">
                         <div class="navbar-header">
                             <button class="pull-right visible-xs navbar-toggle collapsed navbar-toggle-sm" type="button" data-toggle="collapse" data-target="#king-header2-navbar-collapse"> <i class="fa fa-fw fa-ellipsis-v">                    </i> </button>
@@ -47,17 +47,17 @@
                         <div class="navbar-collapse collapse" id="king-header2-navbar-collapse">
                             <ul class="nav navbar-nav navbar-left hidden-sm">
                                 <li>
-                                    <a href="/cmp/">
+                                    <a href="/">
                                         <span>首页</span>
                                     </a>
                                 </li>
                                 <li class="open">
-                                    <a href="/cmp/account/">
+                                    <a href="/account/">
                                         <span>云账号</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/cmp/instance/">
+                                    <a href="/instance/">
                                         <span>云主机</span>
                                     </a>
                                 </li>
@@ -81,12 +81,10 @@
                     </div>
                 </div>
             </nav>
-        </div>
-        <div>
-            <a href="javascript:void(0);" onclick="import_key()" class="king-btn-demo king-btn king-default"  style="margin-top:30px;margin-left:160px" title="导入公有云">导入公有云</a>
-        </div>
-        <div class="king-layout2-main mt15" style="width:960px;">
-            <table class="table mb0 pr15 ranger-box2  ">
+            <div>
+                <a href="javascript:void(0);" onclick="import_key()" class="king-btn-demo king-btn king-default"  style="margin-top:10px;margin-left:2.5%" title="导入公有云">导入公有云</a>
+            </div>
+            <table class="table mb0 pr15 ranger-box2 " style="width:95%; margin:0 auto;">
                 <thead>
                     <tr>
                         <th style="width: 70px;">#</th>
@@ -133,7 +131,7 @@
                     </tr>
                 </tbody>
             </table>
-            <template id="header_tpl_15438358746932">
+            <template id="header_tpl_15441755080652">
                 <tr>
                     <th style="width: 70px;">#index#</th>
                     <th style="width: 15%;">#name#</th>
@@ -143,7 +141,7 @@
                     <th>操作</th>
                 </tr>
             </template>
-            <template id="tpl_15438358746932">
+            <template id="tpl_15441755080652">
                 <tr>
                     <td style="width: 70px;">#index#</td>
                     <td style="width: 15%;">#name#</td>
@@ -159,10 +157,9 @@
             </template>
             <!-- 设置面板End -->
         </div>
-
-    </div>    
-            
-<div id="import_key" class="king-block king-block-bordered" style="position: absolute;top:180px;left: 30%;display:none;width:650px;height:400px;margin:0 auto">
+    </div>
+    
+    <div id="import_key" class="king-block king-block-bordered" style="position: absolute;top:180px;left: 30%;display:none;width:650px;height:400px;">
     <div class="king-block-header king-gray-light">
         <ul class="king-block-options">
             <li>
@@ -298,7 +295,6 @@
                 });
             });
     </script>
-
 </body>
 
 </html>

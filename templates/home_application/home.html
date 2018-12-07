@@ -28,15 +28,16 @@
     <script src="https://magicbox.bk.tencent.com/static_api/v3/bk/js/bk.js"></script>
     <!-- 数据埋点统计 -->
     <script src="http://magicbox.bk.tencent.com/static_api/analysis.js"></script>
+    <script src="static/js/jquery.json-2.3.min.js"></script>
     <!-- 以下两个插件用于在IE8以及以下版本浏览器支持HTML5元素和媒体查询，如果不需要用可以移除 -->
     <!--[if lt IE 9]><script src="https://magicbox.bk.tencent.com/static_api/v3/assets/js/html5shiv.min.js"></script><script src="https://magicbox.bk.tencent.com/static_api/v3/assets/js/respond.min.js"></script><![endif]-->
 </head>
 
 <body class="bg-white" data-bg-color="bg-white">
     <div class="king-page-box">
-        <div class="king-layout1-header">
+        <div class="king-container clearfix">
             <nav>
-                <div class="king-header2 navbar navbar-blue king-horizontal-info f14">
+                <div class="king-header2 navbar navbar-blue  f14">
                     <div class="nav-container">
                         <div class="navbar-header">
                             <button class="pull-right visible-xs navbar-toggle collapsed navbar-toggle-sm" type="button" data-toggle="collapse" data-target="#king-header2-navbar-collapse"> <i class="fa fa-fw fa-ellipsis-v">                    </i> </button>
@@ -51,7 +52,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/account">
+                                    <a href="/account/">
                                         <span>云账号</span>
                                     </a>
                                 </li>
@@ -79,13 +80,8 @@
                         </div>
                     </div>
                 </div>
-            </nav>
-        </div>
-   <!--
-如果没有引用以下文件，请去掉此注释
-<script src="https://magicbox.bk.tencent.com/static_api/v3/assets/js/jquery-1.10.2.min.js"></script>
-<script src="https://magicbox.bk.tencent.com/static_api/v3/assets/echarts-2.0/echarts-all.js"></script>
--->
+            </nav>   
+
 <div id="chart4_demo1" style="height: 500px; padding: 10px; -webkit-tap-highlight-color: transparent; user-select: none; background-color: rgba(0, 0, 0, 0);" _echarts_instance_="1544076120369">
     <div style="position: relative; overflow: hidden; width: 1268px; height: 500px;">
         <div data-zr-dom-id="bg" class="zr-element" style="position: absolute; left: 0px; top: 0px; width: 1268px; height: 500px; user-select: none;"></div>
@@ -94,8 +90,11 @@
         <canvas width="1268" height="500" data-zr-dom-id="_zrender_hover_" class="zr-element" style="position: absolute; left: 0px; top: 0px; width: 1268px; height: 500px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas>
         <div class="echarts-dataview" style="position: absolute; display: block; overflow: hidden; transition: height 0.8s ease 0s, background-color 1s ease 0s; z-index: 1; left: 0px; top: 0px; width: 1268px; height: 0px; background-color: rgb(240, 255, 255);"></div>
     </div>
-</div>
- </div> 
+</div> 
+        </div>
+    </div>
+
+ 
 <script type="text/javascript">
     function createEPieChart(conf){
         var myChart = echarts.init(document.getElementById(conf.selector));
@@ -195,6 +194,7 @@
     });
 </script>   
    
+
 </body>
 
 </html>
