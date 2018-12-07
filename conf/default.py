@@ -120,7 +120,7 @@ INSTALLED_APPS = (
     'app_control',
     'account',
     'home_application',
-    'home_application.cmpmanager',
+    'cmpmanager',
 )
 
 # ==============================================================================
