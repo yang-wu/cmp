@@ -223,19 +223,20 @@
         </form>
     </div>
 </div>
-    <script>
-        function import_key() {
+<script>
+
+      function import_key() {
             var div = document.getElementById("import_key");
             var style = window.getComputedStyle(div);
             div.style.display = style.display=="none"?"block":"none";
            }
         
-        function cancle_import_key() {
+      function cancle_import_key() {
             var div = document.getElementById("import_key");
             div.style.display = "none";
            }
         
-        function confirm_import_key() {
+      function confirm_import_key() {
         	var formData = $('#import_key_form').serializeArray();
         	var data = {};
             for (var i=0; i<formData.length; i++) {

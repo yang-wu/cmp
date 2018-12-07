@@ -65,8 +65,7 @@ def addAccount(request):
                        if not k.startswith('_') and v])
 
         data = CloudManager(request).addAccount(values)
-        print '1111111111'
-        print data
+        
         #return render_json(data)
         return render_mako_context(request, '/home_application/account.html')
     
@@ -109,7 +108,6 @@ def getSyncInstances(request):
         
     
 def get_instances(request):
-    logger.info('3333333333333333333333333333333')
     #datas = CloudManager(request).get_instances(search_keyword, page, count, sort_by)
     #return render_mako_context(request, '/home_application/contact.html')
     #return render_json(**datas)
