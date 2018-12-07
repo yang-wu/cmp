@@ -13,7 +13,7 @@ from common.mymako import render_mako_context
 from common.log import logger
 import json
 #from .cmpmanager import CloudManager
-from cmpmanager import CloudManager
+#from cmpmanager import CloudManager
 
 def home(request):
     """
