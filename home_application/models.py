@@ -14,11 +14,11 @@ See the License for the specific language governing permissions and limitations 
 from __future__ import unicode_literals
 import django.utils.timezone as timezone
 from django.db import models
-from common.django_util import JsonModel
+#from common.django_util import JsonModel
 
 # Create your models here.
 
-class Instance(models.Model, JsonModel):
+class Instance(models.Model):
 
     class Meta:
         db_table = 'instance'
@@ -48,7 +48,7 @@ class Instance(models.Model, JsonModel):
     osName = models.CharField(max_length=128, default='', null=True,blank=True,verbose_name="操作系统名称")
 
 
-class Tcmpaccount(models.Model, JsonModel):
+class Tcmpaccount(models.Model):
 
     class Meta:
         ordering = ['-creationTime']
