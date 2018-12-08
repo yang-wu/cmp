@@ -11,7 +11,6 @@ _template_uri = '/home_application/home.html'
 _source_encoding = 'utf-8'
 _exports = []
 
-
 def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
